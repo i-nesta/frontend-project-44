@@ -27,11 +27,11 @@ const mainGame = (name) => {
         console.log('Correct!');
         i += 1;
       } else {
-        console.log(`"${answerUser}" is wrong answer ;(. Correct answer was 'no'. Let\\'s try again, "${name}"!`);
+        console.log(`"${answerUser}" is wrong answer ;(. Correct answer was 'no'. Let's try again, "${name}"!`);
         break;
       }
     } else {
-      console.log(`${answerUser} is wrong answer ;(. Let\\'s try again, ${name}}!`);
+      console.log(`${answerUser} is wrong answer ;(. Let's try again, ${name}}!`);
       break;
     }
   }
