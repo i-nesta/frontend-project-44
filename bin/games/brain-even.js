@@ -1,3 +1,4 @@
+#!/usr/bin/env node
 import { funcWelcom, getRandomNumber } from '../../src/cli.js';
 import baseGame from '../../src/index.js';
 
@@ -9,22 +10,26 @@ const questionFunc = () => {
   question = getRandomNumber();
   return question;
 };
-function funcCheck(userAnswer) {
+const correctAnswer = () => {
   let result;
   if (question % 2 === 0) {
-    if (userAnswer === 'yes') {
-      result = true;
-    } else {
-      result = false;
-    }
-  } else if (userAnswer % 2 !== 0) {
-    if (userAnswer === 'no') {
-      result = true;
-    } else {
-      result = false;
-    }
+    result = 'yes';
+  } else {
+    result = 'no';
+  }
+  return result;
+};
+
+function funcCheck(userAnswer) {
+  const trueAns = correctAnswer();
+  let result;
+
+  if (userAnswer === trueAns) {
+    result = true;
+  } else {
+    result = false;
   }
   return result;
 }
 
-baseGame(condition, questionFunc, funcCheck, name);
+baseGame(condition, questionFunc, funcCheck, correctAnswer, name);

@@ -1,6 +1,6 @@
 import readlineSync from 'readline-sync';
 
-const baseGame = (condition, question, funcCheck, name) => {
+const baseGame = (condition, question, funcCheck, trueAnswer, name) => {
   console.log(condition);
   let i = 0;
   for (; i < 3;) {
@@ -10,7 +10,7 @@ const baseGame = (condition, question, funcCheck, name) => {
       console.log('Correct!');
       i += 1;
     } else {
-      console.log(`"${userAnswer}" is wrong answer ;(. Correct answer was "yes". Let's try again, ${name}!`);
+      console.log(`"${userAnswer}" is wrong answer ;(. Correct answer was '${trueAnswer()}'. Let's try again, ${name}!`);
       break;
     }
   }

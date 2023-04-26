@@ -1,7 +1,8 @@
+#!/usr/bin/env node
 import { getRandomNumber, funcWelcom } from '../../src/cli.js';
 import baseGame from '../../src/index.js';
 
-const sign = ['+', '-', '*', '/'];
+const sign = ['+', '-', '*'];
 function getRandomSingId() {
   const max = sign.length - 1;
   const min = 0;
@@ -11,11 +12,14 @@ const randomSign = () => {
   const result = sign.at(getRandomSingId());
   return result;
 };
-const a = getRandomNumber();
-const c = getRandomNumber();
-const b = randomSign();
+let a = 0;
+let c = 0;
+let b = '';
 
 const mathExaUser = () => {
+  a = getRandomNumber();
+  c = getRandomNumber();
+  b = randomSign();
   const result = `${a} ${b} ${c}`;
   return result;
 };
@@ -26,10 +30,8 @@ const mathExamleResult = () => {
     result = a + c;
   } else if (b === '-') {
     result = a - c;
-  } else if (b === '*') {
-    result = a * c;
   } else {
-    result = a / c;
+    result = a * c;
   }
   return result;
 };
@@ -37,8 +39,8 @@ const mathExamleResult = () => {
 const name = funcWelcom();
 
 const condition = 'What is the result of the expression?';
-let trueAnswer = mathExamleResult();
 function funcCheck(userAnswer) {
+  const trueAnswer = mathExamleResult();
   let result;
   if (Number(userAnswer) === trueAnswer) {
     result = true;
@@ -48,4 +50,4 @@ function funcCheck(userAnswer) {
   return result;
 }
 
-baseGame(condition, mathExaUser, funcCheck, name);
+baseGame(condition, mathExaUser, funcCheck, mathExamleResult, name);
