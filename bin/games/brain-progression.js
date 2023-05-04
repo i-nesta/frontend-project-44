@@ -3,10 +3,10 @@ import baseGame from '../../src/index.js';
 
 const startNumber = getRandomNumber(10, 1);
 
-let arrBase = [startNumber];
+let arrBase = [getRandomNumber(10, 1)];
 
 const progressions = () => {
-  arrBase = [startNumber];
+  arrBase = [getRandomNumber(10, 1)];
   for (let i = 0; i < 9; i += 1) {
     const y = arrBase[i] + 2;
     arrBase.push(y);
