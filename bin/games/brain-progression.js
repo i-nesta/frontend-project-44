@@ -1,20 +1,17 @@
 import { getRandomNumber, funcWelcom } from '../../src/cli.js';
 import baseGame from '../../src/index.js';
 
-const startNumber = getRandomNumber(10, 1);
-
 let arrBase = [getRandomNumber(10, 1)];
 
 const progressions = () => {
   arrBase = [getRandomNumber(10, 1)];
+  const randomStep = getRandomNumber(5, 2);
   for (let i = 0; i < 9; i += 1) {
-    const y = arrBase[i] + 2;
+    const y = arrBase[i] + randomStep;
     arrBase.push(y);
   }
   return arrBase;
 };
-
-const shadow = getRandomNumber(9, 0);
 
 let arrUser = [];
 
@@ -22,6 +19,7 @@ let trueAnswer = [];
 
 const arrayQue = () => {
   arrUser = [];
+  const shadow = getRandomNumber(9, 0);
   const r = '..';
   for (let i = 0; i < arrBase.length; i += 1) {
     if (i === shadow) {
