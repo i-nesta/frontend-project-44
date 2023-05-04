@@ -17,8 +17,8 @@ let c = 0;
 let b = '';
 
 const mathExaUser = () => {
-  a = getRandomNumber();
-  c = getRandomNumber();
+  a = getRandomNumber(10, 1);
+  c = getRandomNumber(10, 1);
   b = randomSign();
   const result = `${a} ${b} ${c}`;
   return result;

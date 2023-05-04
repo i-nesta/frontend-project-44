@@ -6,9 +6,7 @@ const funcWelcom = () => {
   console.log(`Hello, ${name}`);
   return name;
 };
-function getRandomNumber() {
-  const max = 10;
-  const min = 1;
+function getRandomNumber(max, min) {
   return Math.ceil(Math.random() * (max - min) + min);
 }
 export { funcWelcom, getRandomNumber };

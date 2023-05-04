@@ -1,22 +1,16 @@
 #!/usr/bin/env node
 import baseGame from '../../src/index.js';
-import { funcWelcom } from '../../src/cli.js';
+import { funcWelcom, getRandomNumber } from '../../src/cli.js';
 
 const name = funcWelcom();
-
-function getRandomNumber100() {
-  const max = 100;
-  const min = 1;
-  return Math.ceil(Math.random() * (max - min) + min);
-}
 let a = 0;
 let b = 0;
 
 const condition = 'Find the greatest common divisor of given numbers.';
 
 const question = () => {
-  a = getRandomNumber100();
-  b = getRandomNumber100();
+  a = getRandomNumber(100, 1);
+  b = getRandomNumber(100, 1);
   return `${a} ${b}`;
 };
 

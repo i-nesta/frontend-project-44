@@ -7,7 +7,7 @@ const name = funcWelcom();
 const condition = 'Answer "yes" if the number is even, otherwise answer "no".';
 let question;
 const questionFunc = () => {
-  question = getRandomNumber();
+  question = getRandomNumber(100, 1);
   return question;
 };
 const correctAnswer = () => {
