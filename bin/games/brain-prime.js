@@ -1,5 +1,5 @@
-import { getRandomNumber, funcWelcom } from "../../src/cli.js";
-import baseGame from "../../src/index.js";
+import { getRandomNumber, funcWelcom } from '../../src/cli.js';
+import baseGame from '../../src/index.js';
 
 const name = funcWelcom();
 
@@ -13,16 +13,26 @@ const question = () => {
 };
 
 const primeNumber = () => {
-  let result = '';
+  let trueAnswer = '';
   for (let i = 2; i < number; i += 1) {
     if (number % i === 0) {
-      result = 'no';
+      trueAnswer = 'no';
       break;
     } else {
-      result = 'yes';
+      trueAnswer = 'yes';
     }
+  }
+  return trueAnswer;
+};
+
+function funckCheck(userAnswer) {
+  let result;
+  if (userAnswer === primeNumber()) {
+    result = true;
+  } else {
+    result = false;
   }
   return result;
 }
-console.log (question())
-console.log (primeNumber())
+
+baseGame(condition, question, funckCheck, primeNumber, name);
