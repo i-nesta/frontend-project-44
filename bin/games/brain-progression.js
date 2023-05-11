@@ -36,7 +36,7 @@ const arrayQue = () => {
 const questions = () => {
   progressions();
   arrayQue();
-  const arrayQuestions = arrUser.join(', ');
+  const arrayQuestions = arrUser.join(' ');
   return arrayQuestions;
 };
 
