@@ -1,3 +1,4 @@
+#!/usr/bin/env node
 import { getRandomNumber, funcWelcom } from '../../src/cli.js';
 import baseGame from '../../src/index.js';
 
